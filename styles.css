@@ -13,13 +13,8 @@ body {
 
 .outer {
     margin: 35px;
-    height: 660px;
+    min-height: calc(100vh - 70px);
     background-color: #eff6ff;
-}
-
-.title-card {
-    font-weight: 900;
-    font-size: 30px;
 }
 
 .heading-bar {
@@ -33,8 +28,22 @@ body {
     background-color: #172554;
     color: white;
     font-weight: 900;
+    position: sticky;
+    
 }
 
+.title-card {
+    font-weight: 900;
+    font-size: 30px;
+}
+.title-card a{
+    text-decoration: none;
+    color:white;
+}
+
+.title-card a:hover{
+    color: #93c5fd;
+}
 
 .nav-bar {
     display: flex;
@@ -42,26 +51,20 @@ body {
     gap: 35px;
 }
 
-
 .nav-bar a {
     color: white;
     text-decoration: none;
     font-size: 17px;
-
 }
-
 
 .nav-bar a:hover {
     color: #93c5fd;
 }
 
-
 .main {
     text-align: center;
     min-height: 400px;
-
     padding-top: 100px;
-
     font-family: 'DM Sans', sans-serif;
 }
 
@@ -114,13 +117,9 @@ body {
 .skill-card {
     width: 150px;
     padding: 30px 20px;
-
     background-color: white;
     border-radius: 12px;
-
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-
-
 }
 
 .skill-card:hover {
@@ -131,16 +130,14 @@ body {
     padding: 60px;
     text-align: center;
     font-family: 'DM Sans', sans-serif;
-    
 }
 
 .project-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 40px auto;
-   
 }
 
 .project-card {
@@ -176,6 +173,7 @@ body {
     border: none;
     cursor: pointer;
     margin-top: 40px;
+    margin-right:12px;
 }
 
 .btn:hover {
@@ -201,13 +199,10 @@ body {
 .contact textarea {
     width: 100%;
     padding: 14px;
-
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-
     font-family: inherit;
     font-size: 16px;
-
     outline: none;
 }
 
@@ -228,7 +223,6 @@ body {
         flex-direction: column;
         justify-content: center;
         gap: 20px;
-
         padding: 25px;
     }
 
@@ -236,7 +230,7 @@ body {
         width: 100%;
         justify-content: center;
         gap: 20px;
-        flex-wrap: wrap;
+       
     }
 
     .nav-bar a {
