@@ -1,23 +1,53 @@
+// Navbar
 fetch("navbar.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("navbar").innerHTML = data;
     });
 
+
+
 const username = "shreyram05";
-async function getGithubRepo(repoName, cardId) {
+async function getGithubRepos() {
 
     const response = await fetch(
-        `https://api.github.com/repos/${username}/${repoName}`
+        `https://api.github.com/users/${username}/repos`
     );
 
-    const repo = await response.json();
+    const repos = await response.json();
+    const container = document.getElementById("project-container");
 
-    const card = document.getElementById(cardId);
+    repos.forEach(repo => {
 
-    card.querySelector(".github-link").href = repo.html_url;
+        const card = document.createElement("div");
+        card.className = "project-card";
+        const githubLink = repo.html_url;
+        console.log(repo.name, repo.description);
+        const projectLink =
+            `https://${username}.github.io/${repo.name}/`;
+        card.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "No description available."}</p>
+            <div class="project-buttons">
+
+                <a href="${githubLink}"
+                   target="_blank"
+                   class="btn">
+                    GitHub Link
+                </a>
+
+                <a href="${projectLink}"
+                   target="_blank"
+                   class="btn">
+                    View Project
+                </a>
+
+            </div>
+
+        `;
+        container.appendChild(card);
+
+    });
 }
 
-getGithubRepo("Restaurant-Website", "restaurant");
-getGithubRepo("shopease-responsive-website", "shopease");
-getGithubRepo("public-weather-api", "weather");
+getGithubRepos();
