@@ -31,10 +31,6 @@ body {
     background-color: #172554;
     color: white;
     font-weight: 900;
-    position: sticky;
-    top:0;
-    left:0;
-    z-index:1000;
 }
 
 .title-card {
@@ -235,7 +231,6 @@ body {
         width: 100%;
         justify-content: center;
         gap: 20px;
-       
     }
 
     .nav-bar a {
